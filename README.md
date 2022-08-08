@@ -1,4 +1,4 @@
-# Exercises for "Dangerous Attack Path: Development Environment Security - Devices and CI/CD pipelines"
+# Exercises for "Dangerous attack paths: Development Environment Security - Devices and CI/CD pipelines"
 
 This repository contains the training materials of "Dangerous Attack Path: Development Environment Security - Devices and CI/CD pipelines" at Security Camp 2022.
 

@@ -47,6 +47,6 @@ TBD
 - Goal: Attacks CI/CD pipeline and understand the attack surface
 - Exercise: Overwrite source code without any review, Steal secret from non-protected branch, Try Supply-Chain attacks via Actions the repository uses
 
-### [Exercise5: Protect your CI/CD pipeline](./5-exercise5/README.md)
-- Goal: Try to protect CI/CD pipeline from attacks
+### [Exercise5: Secure your CI/CD pipeline](./5-exercise5/README.md)
+- Goal: Try to secure CI/CD pipeline from attacks
 - Exercise: Configure Branch Protection, Configure OIDC, then try keyless between GitHub actions and Google Cloud

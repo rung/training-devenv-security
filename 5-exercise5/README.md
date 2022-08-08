@@ -1,6 +1,6 @@
 # Exercise5: Secure your CI/CD pipeline
 ## Goal
-- Try to secure CI/CD pipeline from attacks
+- Try to secure CI/CD pipeline from attacks and understand the limitation
 
 ## Exercises
 - Configure Branch Protection

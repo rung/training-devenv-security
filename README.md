@@ -18,7 +18,7 @@ TBD
 ## Terminal
 - I recommend Cloud Shell for this exercise
 
-[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.png)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/rung/seccamp2022-devenv-security-training&page=editor&cloudshell_tutorial=README.md)
+[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.png)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/rung/seccamp2022-devenv-security-training)
 
 - You can also use your own shell envionment on your device
   - Mac: Terminal

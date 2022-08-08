@@ -1,0 +1,59 @@
+name: deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Go 1.18
+        uses: actions/setup-go@v3
+        with:
+          go-version: ^1.18
+
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v3
+
+      - name: Test
+        run: go test -v -race ./...
+  deploy:
+    name: deploy
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      # id-token: write
+    env:
+      # You need to modify these values
+      PROJECT_ID: <Project ID>
+      RUN_SA_ID: run-helloworld@<Project ID>.iam.gserviceaccount.com
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+      - name: supplychain attacks (Exercise 4)
+        uses: ./supplychain
+      - id: 'auth'
+        name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v0'
+        with:
+          credentials_json: '${{ secrets.GCP_SA_KEY }}'
+          # provider info: https://console.cloud.google.com/iam-admin/workload-identity-pools/pool/training-pool/provider/training-provider
+          # workload_identity_provider: 'projects/<Project Number>/locations/global/workloadIdentityPools/training-pool/providers/training-provider'
+          # service_account: 'app-actions-cd@<Project ID>.iam.gserviceaccount.com'
+      - name: 'Build and Push a container image to Artifact Registry'
+        run: |-
+          # Artifact Registry (Google's container registry) is configured via Terraform
+          gcloud auth configure-docker us-docker.pkg.dev --quiet
+          docker build -t "us-docker.pkg.dev/${{ env.PROJECT_ID }}/training-helloworld/helloworld:${{ github.sha }}" ./
+          docker push "us-docker.pkg.dev/${{ env.PROJECT_ID }}/training-helloworld/helloworld:${{ github.sha }}"
+      - name: 'Deploy to Cloud Run'
+        run: |-
+          gcloud run deploy training-helloworld \
+            --region us-central1 \
+            --image "us-docker.pkg.dev/${{ env.PROJECT_ID }}/training-helloworld/helloworld:${{ github.sha }}" \
+            --service-account ${{ env.RUN_SA_ID }} \
+            --platform managed \
+            --allow-unauthenticated

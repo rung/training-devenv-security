@@ -1,0 +1,89 @@
+# You need to modify this value
+locals {
+  app_repo_name = "<github org or name>/devenv-security-app"
+  iac_repo_name = "<github org or name>/devenv-security-iac"
+}
+
+
+resource "google_iam_workload_identity_pool" "training" {
+  workload_identity_pool_id = "training-pool"
+}
+
+resource "google_iam_workload_identity_pool_provider" "training" {
+  workload_identity_pool_id          = google_iam_workload_identity_pool.training.workload_identity_pool_id
+  workload_identity_pool_provider_id = "training-provider"
+  attribute_mapping = {
+    "google.subject"       = "assertion.sub"
+    "attribute.actor"      = "assertion.actor"
+    "attribute.aud"        = "assertion.aud"
+    "attribute.repository" = "assertion.repository"
+  }
+  oidc {
+    issuer_uri = "https://token.actions.githubusercontent.com"
+  }
+}
+
+resource "google_service_account" "app_actions_cd" {
+  account_id = "app-actions-cd"
+}
+
+resource "google_service_account_iam_binding" "app_actions_cd" {
+  service_account_id = google_service_account.app_actions_cd.name
+  role               = "roles/iam.workloadIdentityUser"
+
+  members = [
+    "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.training.name}/attribute.repository/${local.app_repo_name}",
+  ]
+}
+
+resource "google_project_iam_member" "app_actions_cd_is_editor" {
+  project = var.project
+  role    = "roles/editor"
+  member  = "serviceAccount:${google_service_account.app_actions_cd.email}"
+}
+
+resource "google_service_account" "iac_actions_cd" {
+  account_id = "iac-actions-cd"
+}
+
+resource "google_service_account_iam_binding" "iac_actions_cd" {
+  service_account_id = google_service_account.iac_actions_cd.name
+  role               = "roles/iam.workloadIdentityUser"
+
+  members = [
+    "principal://iam.googleapis.com/${google_iam_workload_identity_pool.training.name}/subject/repo:${local.iac_repo_name}:ref:refs/heads/main",
+  ]
+}
+
+resource "google_project_iam_member" "iac_actions_cd_is_owner" {
+  project = var.project
+  role    = "roles/owner"
+  member  = "serviceAccount:${google_service_account.iac_actions_cd.email}"
+}
+
+resource "google_service_account" "iac_actions_ci" {
+  account_id = "iac-actions-ci"
+}
+
+resource "google_service_account_iam_binding" "iac_actions_ci" {
+  service_account_id = google_service_account.iac_actions_ci.name
+  role               = "roles/iam.workloadIdentityUser"
+
+  members = [
+    "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.training.name}/attribute.repository/${local.iac_repo_name}",
+  ]
+}
+
+resource "google_project_iam_member" "iac_actions_ci_is_reader" {
+  project = var.project
+  # reader is still high privilege because it can read many contents
+  role   = "roles/reader"
+  member = "serviceAccount:${google_service_account.iac_actions_ci.email}"
+}
+
+resource "google_project_iam_member" "iac_actions_ci_is_objectadmin" {
+  project = var.project
+  # roles/storage.objectAdmin is still high privilege because it can read other buckets
+  role   = "roles/storage.objectAdmin"
+  member = "serviceAccount:${google_service_account.iac_actions_ci.email}"
+}

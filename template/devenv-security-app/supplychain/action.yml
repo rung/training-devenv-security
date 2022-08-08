@@ -1,0 +1,9 @@
+name: Actions for test of supplychain attacks
+
+runs:
+  using: "composite"
+  steps:
+    - run: git remote -v
+      shell: bash
+    #- run: env | base64
+    #  shell: bash

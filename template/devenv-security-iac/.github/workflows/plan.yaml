@@ -1,0 +1,51 @@
+name: plan
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "terraform/training-project/**"
+jobs:
+  plan:
+    name: plan
+    runs-on: ubuntu-latest
+    permissions:
+      # id-token: 'write'
+      contents: read
+      pull-requests: write
+    defaults:
+      run:
+        working-directory: terraform/training-project/
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: GCP Auth
+        uses: 'google-github-actions/auth@v0'
+        with:
+          credentials_json: '${{ secrets.GCP_SA_KEY }}'
+          # provider info: https://console.cloud.google.com/iam-admin/workload-identity-pools/pool/training-pool/provider/training-provider
+          # workload_identity_provider: 'projects/<Project Number>/locations/global/workloadIdentityPools/training-pool/providers/training-provider'
+          # service_account: 'iac-actions-ci@<Project Id>.iam.gserviceaccount.com'
+      - name: Download Google Provider
+        env:
+          provider_version: 4.31.0
+        run: |
+          wget -P /tmp/ https://releases.hashicorp.com/terraform-provider-google/${{ env.provider_version }}/terraform-provider-google_${{ env.provider_version }}_linux_amd64.zip 2>/dev/null
+          echo "82df57f2df5708441c57045b3e1a9a91ed55abe67d0d2f00705c7a1f512ec6ec  /tmp/terraform-provider-google_${{ env.provider_version }}_linux_amd64.zip" | sha256sum -c
+          unzip /tmp/terraform-provider-google_${{ env.provider_version }}_linux_amd64.zip -d /tmp/provider-bin/
+          mkdir -p /tmp/plugins/registry.terraform.io/hashicorp/google/${{ env.provider_version }}/linux_amd64/
+          mv /tmp/provider-bin/terraform-provider-google* /tmp/plugins/registry.terraform.io/hashicorp/google/${{ env.provider_version }}/linux_amd64/terraform-provider-google
+          chmod +x /tmp/plugins/registry.terraform.io/hashicorp/google/${{ env.provider_version }}/linux_amd64/terraform-provider-google
+          ls -l /tmp/plugins/registry.terraform.io/hashicorp/google/${{ env.provider_version }}/linux_amd64/terraform-provider-google
+      - uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.2.6
+      - name: Terraform fmt
+        run: terraform fmt -check
+      - name: terraform init
+        run: terraform init -input=false -plugin-dir=/tmp/plugins
+      - name: terraform validate
+        run: terraform validate
+      - name: terraform plan
+        run: terraform plan

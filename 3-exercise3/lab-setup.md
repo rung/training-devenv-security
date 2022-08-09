@@ -122,6 +122,7 @@ variable "project" {
 
 <kbd> <img src="https://user-images.githubusercontent.com/1150301/183320761-be628735-f8c2-49f6-9883-a7a0896f488f.png" height="100"> </kbd>
 
+* When you get error like `API has not been used in project `, please re-run the job
 
 - devenv-security-app/.github/workflows/deploy.yaml
   - Change this line. (Replace `<Project ID>` to Your Project Name)

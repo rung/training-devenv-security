@@ -10,6 +10,7 @@
 
 ## Additional Exercise
 - Network Restriction to Google Cloud API via [VPC Service Controls](https://cloud.google.com/vpc-service-controls)
+  - Caution: Org-level permission is required
 
 ## Procedure
 ### 1. Try WebAuthn on your device

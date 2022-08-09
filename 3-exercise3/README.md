@@ -36,5 +36,7 @@ resource "google_service_account" "test" {
 }
 ```
 
+- You can see the result on web console: https://console.cloud.google.com/iam-admin/serviceaccounts
+
 ### 3. (optional) read code
 - Understand what happens from the source codes

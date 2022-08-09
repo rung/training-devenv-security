@@ -1,7 +1,7 @@
 # Lab Setup Procedure
 ### Prepare GitHub repositories and automation flows
 #### Prepare GitHub repositories
-- CloudShell user needs to do Git Configuration
+- CloudShell user needs to set Git Configuration
 ```
 $ git config --global user.email "<Your email address>"
 $ git config --global user.name "<Your name>"
@@ -16,6 +16,7 @@ $ git config --global user.name "<Your name>"
 
 
 ```bash
+# Go to "seccamp2022-devenv-security-training"
 $ cd template/devenv-security-app/
 $ git init
 $ git add -A
@@ -52,6 +53,8 @@ $
 
 
 ```
+# Go to "seccamp2022-devenv-security-training"
+$ cd template/devenv-security-iac/
 $ git init
 $ git add -A
 $ git status
@@ -82,14 +85,16 @@ $
 - Google Cloud Configuration
   - Create a new service account, grant owner to the SA, then download a key of the SA
 ```bash
-$ gcloud config set project <PROJECT_ID>
-$ gcloud projects add-iam-policy-binding <PROJECT_ID> --member="serviceAccount:actions-secret@<PROJECT_ID>.iam.gserviceaccount.com" --role="roles/owner"
-$ gcloud iam service-accounts keys create google_static_key.json --iam-account=actions-secret@<PROJECT_ID>.iam.gserviceaccount.com
+$ PROJECT_ID=<PROJECT_ID>
+$ gcloud config set project $PROJECT_ID
+$ gcloud iam service-accounts create actions-secret
+$ gcloud projects add-iam-policy-binding ${PROJECT_ID} --member="serviceAccount:actions-secret@${PROJECT_ID}.iam.gserviceaccount.com" --role="roles/owner"
+$ gcloud iam service-accounts keys create google_static_key.json --iam-account=actions-secret@${PROJECT_ID}.iam.gserviceaccount.com
 $ cat google_static_key.json
 ```
 
   - Save google_static_key.json to the GitHub
-    - https://github.com/<Your org or name>/devenv-security-app/settings/secrets/actions
+    - `https://github.com/<Your org or name>/devenv-security-app/settings/secrets/actions`
     - KEY_NAME: `GCP_SA_KEY`
     - ![image](https://user-images.githubusercontent.com/1150301/183318694-7b57f92d-f95f-448d-8ec4-534f9a23de82.png)
   - Do same thing to `devenv-security-iac` too

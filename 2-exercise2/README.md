@@ -58,7 +58,6 @@ $ curl "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=ya29.c.b0AXv
 ```
 
 - Google Compute Engine Instance has Identity on Google Cloud, so without static key, it can get temporary token through metadata service
-** You need to delete the instance after this exercise **
 
 ### 4. (Optional) Try least privilege on Google Cloud
 - The purpose is to understand [IAM](https://cloud.google.com/iam/docs/understanding-roles)

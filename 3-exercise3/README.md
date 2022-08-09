@@ -32,7 +32,7 @@
 - For instance, you can create a new service account like this configuration
 ```terraform
 resource "google_service_account" "test" {
-  account_id   = "service-account-id"
+  account_id = "service-account-id"
 }
 ```
 

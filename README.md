@@ -11,9 +11,9 @@ TBD
 ## Presentation Slide
 - I plan to publish slides (English Version and Japanese Version) within Aug
 
-## Lab Environment
-- Google Cloud
-- GitHub
+## Requirements for this exercise
+- Google Cloud Account
+- GitHub Account
 
 ## Terminal
 - I recommend Cloud Shell for this exercise

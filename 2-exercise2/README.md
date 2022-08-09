@@ -4,7 +4,6 @@
 
 ## Exercise
 - Try Webauthn
-  - GitHub is not IDaaS, but it supports Webauth, so you can try
 - Assign temporary role via IAM Condition on Google Cloud
 - (Optional) Try Keyless (within Cloud)
 - (Optional) Try least privilege on Google Cloud
@@ -14,6 +13,7 @@
 
 ## Procedure
 ### 1. Try WebAuthn on your device
+- Caution: GitHub supports WebAuthn, so that you can try WebAuthn
 - Register your key
   - https://github.com/settings/two_factor_authentication/configure
 
@@ -23,8 +23,11 @@
   
 
 ### 2. Assign temporary role via IAM Condition on Google Cloud
+- Service Account: `training-sa` (You created it in [0.preparation](../0-preparation/README.md#create-a-service-account))
 
 <kbd> <img src="https://user-images.githubusercontent.com/1150301/183404485-1e9c43ac-ff54-48be-b54e-abf9cba60694.png" height="150"> </kbd>
+
+- You use the SA later, so please don't set a close expiration date
 
 <kbd> <img src="https://user-images.githubusercontent.com/1150301/183404663-28aec4e4-8191-4326-b305-3ce969facf31.png" height="150"> </kbd>
 

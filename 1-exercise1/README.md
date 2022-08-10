@@ -44,6 +44,7 @@ make build
 
 - For Windows
   - (When your profile name is `Default`)
+  - (For Powershell user) Please replace `%HOMEPATH%` to `$HOME`
 ```bash
 # Cookie
 hack-chrome-data.exe -kind cookie -targetpath "%HOMEPATH%\AppData\Local\Google\Chrome\User Data\Default\Network\Cookies" -localstate "%HOMEPATH%\AppData\Local\Google\Chrome\User Data\Local State"

@@ -25,6 +25,7 @@
 
 ### 2. Assign temporary role via IAM Condition on Google Cloud
 - Service Account: `training-sa` (You created it in [0.preparation](../0-preparation/README.md#create-a-service-account))
+- IAM configuration: https://console.cloud.google.com/iam-admin/iam
 
 <kbd> <img src="https://user-images.githubusercontent.com/1150301/183404485-1e9c43ac-ff54-48be-b54e-abf9cba60694.png" height="150"> </kbd>
 

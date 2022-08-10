@@ -16,11 +16,13 @@
 
 ## Exercises Procedure
 ### 1. Configure Branch Protection
+- Target Repository: `devenv-security-iac`
 
 <kbd> <img src="https://user-images.githubusercontent.com/1150301/183426687-624dad37-10ba-44ea-99f3-b82eed42ad2c.png" height="400"> </kbd>
 
 
 ### 2. Configure OIDC, then try keyless between GitHub actions and Google Cloud
+- Target Repository: `devenv-security-iac`
 - Rename `google_actions_oidc.tf_` to `google_actions_oidc.tf` (`devenv-security-iac/terraform/training-project/`)
   - It enables Workload Federation
 

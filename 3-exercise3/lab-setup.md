@@ -108,7 +108,7 @@ $ gsutil mb -c Standard -l US --pap enforced -b on gs://tmp-training-devenv-secu
 
 #### Modify GitHub repositories
 ##### devenv-security-iac/terraform/training-project/
-- bucket.tf
+- backend.tf
   - Modify `bucket` to correct name you created
   - `tmp-training-devenv-security-<Your GitHub Name>`
 - variable.tf

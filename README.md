@@ -7,6 +7,7 @@ TBD
 
 ## Disclaimer
 - This repository's purpose is education and security research to cybersecurity and software engineering community.
+- We use GitHub as Source Code Management and Google Cloud as a public cloud in this exercise, but the contents of the slide can apply to others.
 
 ## Presentation Slide
 - I plan to publish slides (English Version and Japanese Version) within Aug

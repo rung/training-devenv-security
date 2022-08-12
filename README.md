@@ -39,7 +39,7 @@ TBD
 - Goal: Try some mitigation method from the slide
 - Exercise: Try Webauthn, Try least privilege on Google Cloud, Assign temporary role via IAM Condition on Google Cloud, Try Keyless (within Cloud)
 
-### [Exercise3: Try continuous deployment and Infrastructure as code](./3-exercise3/README.md)
+### [Exercise3: Make and Try continuous deployment and Infrastructure as code](./3-exercise3/README.md)
 - You need to do [Lab Setup](./3-exercise3/lab-setup.md) before this Exercise
 - Goal: Understand concept of Continuous Deployment and Infrastructure as code(Terraform)
 - Exercise: Modify Go code and see automatic deployment, Add configuration via Terraform

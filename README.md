@@ -9,7 +9,7 @@ Author of [Common Threat Matrix for CI/CD Pipeline
 ## Course Abstract
 Over the past ten years, the development environment in which software is being developed has changed dramatically: with the spread of DevOps culture and the increased use of Cloud infrastructures, and applications are now deployed through CI/CD pipelines. In addition, development is now conducted not only in the office, but also outside the company.
 
-In this training, we will discuss how to attack and protect modern production environments, mainly from the perspective of client-side attacks using malware and supply-chain attacks, and explain comprehensive attack methods and measures, followed by hands-on exercises.
+In this training, we will discuss how to attack and secure modern production environments, mainly from the perspective of client-side attacks using malware and supply-chain attacks, and explain comprehensive attack methods and measures, followed by hands-on exercises.
 
 In hands-on exercises, You can decrypt your browser's cookie and password, and other credentials. Then you create a new CI/CD pipeline for automated deployment and Infrastructure as Code, attacking and securing them on your hand!
 

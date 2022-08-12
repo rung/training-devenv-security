@@ -7,6 +7,7 @@ Over the past ten years, the development environment in which software is being 
 
 In this training, we will discuss how to attack and protect modern production environments, mainly from the perspective of client-side attacks using malware and supply-chain attacks, and explain comprehensive attack methods and measures, followed by hands-on exercises.
 
+In hands-on exercises, You can decrypt your browser's cookie and password, and other credentials. Then you create a new CI/CD pipeline for automated deployment and Infrastructure as Code, attacking and securing them on your hand!
 
 ## Disclaimer
 - This repository's purpose is education and security research to cybersecurity and software engineering community.

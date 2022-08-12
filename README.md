@@ -2,6 +2,10 @@
 
 This repository contains the training materials of "Dangerous Attack Path: Development Environment Security - Devices and CI/CD pipelines" at Security Camp 2022.
 
+This training is created by Hiroki SUEZAWA([@rung](https://twitter.com/rung/)), 
+Author of [Common Threat Matrix for CI/CD Pipeline
+](https://github.com/rung/threat-matrix-cicd) and reviewer of [Top10 CI/CD Security Risks](https://www.cidersecurity.io/top-10-cicd-security-risks/).
+
 ## Course Abstract
 Over the past ten years, the development environment in which software is being developed has changed dramatically: with the spread of DevOps culture and the increased use of Cloud infrastructures, and applications are now deployed through CI/CD pipelines. In addition, development is now conducted not only in the office, but also outside the company.
 

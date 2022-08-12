@@ -3,7 +3,10 @@
 This repository contains the training materials of "Dangerous Attack Path: Development Environment Security - Devices and CI/CD pipelines" at Security Camp 2022.
 
 ## Course Abstract
-TBD
+Over the past ten years, the development environment in which software is being developed has changed dramatically: with the spread of DevOps culture and the increased use of Cloud infrastructures, and applications are now deployed through CI/CD pipelines. In addition, development is now conducted not only in the office, but also outside the company.
+
+In this training, we will discuss how to attack and protect modern production environments, mainly from the perspective of client-side attacks using malware and supply-chain attacks, and explain comprehensive attack methods and measures, followed by hands-on exercises.
+
 
 ## Disclaimer
 - This repository's purpose is education and security research to cybersecurity and software engineering community.

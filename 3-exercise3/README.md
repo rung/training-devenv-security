@@ -1,4 +1,4 @@
-# Exercise3: Try continuous deployment and Infrastructure as code
+# Exercise3: Make and Try continuous deployment and Infrastructure as code
 ## Goal
 - Understand concept of Continuous Deployment and Infrastructure as code(Terraform)
 

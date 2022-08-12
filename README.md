@@ -18,7 +18,10 @@ In hands-on exercises, You can decrypt your browser's cookie and password, and o
 - We use GitHub as Source Code Management and Google Cloud as a public cloud in this exercise, but the contents of the slide can apply to others.
 
 ## Presentation Slide
-- I plan to publish slides (English Version and Japanese Version) within Aug
+|English|Japanese (日本語)|
+|---|---|
+|[![English](https://user-images.githubusercontent.com/1150301/184302502-b0c6138e-6498-4fc8-ab2d-29ea69d5e05f.png)](https://speakerdeck.com/rung/training-devenv-security-en)|[![Japanese](https://user-images.githubusercontent.com/1150301/184300825-f351f68d-7704-43de-a193-9b7a98b297cb.png)](https://speakerdeck.com/rung/training-devenv-security-ja)|
+
 
 ## Requirements for this exercise
 - Google Cloud Account

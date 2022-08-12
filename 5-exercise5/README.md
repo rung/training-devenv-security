@@ -9,10 +9,9 @@
 
 ## Additional Exercises
 - Enter GitHub Actions using Tailscale and reverseshell (The procedure is in the slide)
-- Steal app's deployment token(now, it's owner), But even if it's editor, it can be escalated to Owner. How?
-  - Reference: https://rhinosecuritylabs.com/gcp/privilege-escalation-google-cloud-platform-part-1/
+- Steal Google Service Account Token in the keyless environment
 - Steal IaC's CI(read) token, then see tfstate file on Google Storage
-  - Consider what role is needed to do `Least Privilege` policy
+  - Then Consider what role CI should have to do `Least Privilege` policy
 
 ## Exercises Procedure
 ### 1. Configure Branch Protection

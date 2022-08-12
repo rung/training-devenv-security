@@ -2,7 +2,7 @@
 ## Goal
 - Attacks CI/CD pipeline and understand the attack surface
   - Assume developer's device is compromised
-  - Assume supply-chain is compromised
+  - Assume tool/software dependencies are compromised
 
 ## Exercises
 - Overwrite source code without any review

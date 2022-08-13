@@ -1,6 +1,6 @@
 # What is this
 
-This repository is Hands-on Exercises for "[Dangerous Attack Path: Development Environment Security - Devices and CI/CD pipelines](https://speakerdeck.com/rung/training-devenv-security-en)" at Security Camp (Japan) 2022.  
+This repository is Hands-on Exercises for "[Dangerous Attack Path: Modern Development Environment Security - Devices and CI/CD pipelines](https://speakerdeck.com/rung/training-devenv-security-en)" at Security Camp (Japan) 2022.  
 This training is created by Hiroki SUEZAWA([@rung](https://twitter.com/rung/)), 
 Author of [Common Threat Matrix for CI/CD Pipeline
 ](https://github.com/rung/threat-matrix-cicd) and reviewer of [Top10 CI/CD Security Risks](https://www.cidersecurity.io/top-10-cicd-security-risks/).

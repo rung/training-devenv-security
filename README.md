@@ -1,4 +1,4 @@
-# 📖 Hands-on Exercises for "Dangerous attack paths: Development Environment Security - Devices and CI/CD pipelines"
+# Hands-on Exercises for "Dangerous attack paths: Development Environment Security - Devices and CI/CD pipelines"
 
 This repository contains the Hands-on Exercises for "Dangerous Attack Path: Development Environment Security - Devices and CI/CD pipelines" at Security Camp 2022.
 
@@ -18,7 +18,7 @@ In hands-on exercises, You can decrypt your browser's cookie and password, and o
 - This repository's purpose is education and security research to cybersecurity and software engineering community.
 - We use GitHub as Source Code Management and Google Cloud as a public cloud in this exercise, but the contents of the slide can apply to others.
 
-## 📓 Presentation Slide
+## 📖 Presentation Slide
 |English|Japanese (日本語)|
 |---|---|
 |[![English](https://user-images.githubusercontent.com/1150301/184302502-b0c6138e-6498-4fc8-ab2d-29ea69d5e05f.png)](https://speakerdeck.com/rung/training-devenv-security-en)|[![Japanese](https://user-images.githubusercontent.com/1150301/184300825-f351f68d-7704-43de-a193-9b7a98b297cb.png)](https://speakerdeck.com/rung/training-devenv-security-ja)|

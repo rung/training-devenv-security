@@ -14,7 +14,7 @@
   - Local Application(Slack, etc)
   - Other public cloud services
 
-## Exercise's procedure
+## Exercises procedure
 ### 1. Investigate Chrome's profile (Local Device)
 #### Profile Path
 - Windows (Please use Windows side, not WSL)
@@ -44,7 +44,7 @@ make build
 
 - For Windows
   - (When your profile name is `Default`)
-  - (For Powershell user) Please replace `%HOMEPATH%` to `$HOME`
+  - (For Powershell user) Please replace `%HOMEPATH%` with `$HOME`
 ```bash
 # Cookie
 hack-chrome-data.exe -kind cookie -targetpath "%HOMEPATH%\AppData\Local\Google\Chrome\User Data\Default\Network\Cookies" -localstate "%HOMEPATH%\AppData\Local\Google\Chrome\User Data\Local State"
@@ -55,7 +55,7 @@ hack-chrome-data.exe -kind logindata -targetpath "%HOMEPATH%\AppData\Local\Googl
 
 - For macOS (Normal)
   - (When your profile name is `Default`)
-  - this asks to access to keychain
+  - this asks to access keychain
     - (`security find-generic-password -wa "Chrome"` is called internally)
 ````bash
 # Cookie
@@ -76,7 +76,7 @@ $ ./hack-chrome-data -kind logindata -targetpath ~/Library/Application\ Support/
 ### 3. Check Google Cloud's credentials
 - You can get Google Cloud Cookie from Browser
 - You can access the json file of `Service Account Key` you downloaded during [preparation](https://github.com/rung/training-devenv-security/blob/main/0-preparation/README.md)
-- You can access to `~/.config/gcloud/legacy_credentials/<your emailaddress>/adc.json`
+- You can access `~/.config/gcloud/legacy_credentials/<your emailaddress>/adc.json`
   - It's legacy token, but still available
 - You can access `credential.db` too
 ```
@@ -86,7 +86,7 @@ $ file ~/.config/gcloud/credentials.db
 $ sqlite3 ~/.config/gcloud/credentials.db "select value from credentials;"
 ```
 
-- Caution: If you are on Cloud Shell, the credential is not stored on the terminal. You can access to the credential as follows
+- Caution: If you are on Cloud Shell, the credential is not stored on the terminal. You can access the credential as follows
 ```
 # Get Access Token
 $ curl "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token" -H "Metadata-Flavor: Google"

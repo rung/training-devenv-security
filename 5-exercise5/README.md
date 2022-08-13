@@ -13,7 +13,7 @@
 - Steal IaC's CI(read) token, then see tfstate file on Google Storage
   - Then Consider what role CI should have to do `Least Privilege` policy
 
-## Exercises Procedure
+## Exercises procedure
 ### 1. Configure Branch Protection
 - Target Repository: `devenv-security-iac`
 
@@ -34,4 +34,4 @@
     - Comment out `credentials_json`
     - Uncomment `workload_identity_provider: 'projects/<Project Number>/locations/global/workloadIdentityPools/training-pool/providers/training-provider'`
     - Uncomment `service_account: 'iac-actions-cd@<Project ID>.iam.gserviceaccount.com'`
-- You can do same thing to App too.
+- You can do the same thing to App too.

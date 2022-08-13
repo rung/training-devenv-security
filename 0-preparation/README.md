@@ -1,6 +1,6 @@
 # Preparation: Setup Google Cloud and GitHub
 - You need to register Google Cloud and GitHub to do this training
-- For next section, you login to each service in this preparation
+- For the next section, you log-in to each service in this preparation
 
 ## Procedure
 ### GitHub

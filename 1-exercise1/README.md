@@ -10,7 +10,7 @@
 
 ## Additional Exercise
 - Investigate other tokens
-  - Password Manager(like 1Password, Lastpass)
+  - Password Manager(such as 1Password, Lastpass)
   - Local Application(Slack, etc)
   - Other public cloud services
 

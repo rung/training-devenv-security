@@ -1,6 +1,6 @@
 # Exercise4: CI/CD Attacks
 ## Goal
-- Attack CI/CD pipeline and understand the attack surface
+- Attacks on CI/CD pipelines and understanding the attack surface
   - Assume a developer's device is compromised
   - Assume tool/software dependencies are compromised
 

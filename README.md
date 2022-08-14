@@ -61,7 +61,7 @@ In hands-on exercises, You can decrypt your browser's cookie and password, and o
 - Exercise: Modify Go code and see automatic deployment, Add configuration via Terraform
 
 ### [Exercise4: CI/CD Attacks](./4-exercise4/README.md)
-- Goal: Attack CI/CD pipeline and understand the attack surface
+- Goal: Attacks on CI/CD pipelines and understanding the attack surface
 - Exercise: Overwrite source code without any review, Steal secrets from a non-protected branch, Try Supply-Chain attacks via Actions the repository uses
 
 ### [Exercise5: Secure your CI/CD pipeline](./5-exercise5/README.md)

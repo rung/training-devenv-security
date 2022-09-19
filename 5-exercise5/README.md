@@ -23,6 +23,14 @@
 ### 2. Configure OIDC, then try keyless between GitHub actions and Google Cloud
 - Target Repository: `devenv-security-iac`
 - Rename `google_actions_oidc.tf_` to `google_actions_oidc.tf` (`devenv-security-iac/terraform/training-project/`)
+  - Change these lines. (Replace `<github org or name>` to Your Github Org or Name)
+      ```
+        # You need to modify this value
+        locals {
+          app_repo_name = "<github org or name>/devenv-security-app"
+          iac_repo_name = "<github org or name>/devenv-security-iac"
+        }
+      ```
   - It enables Workload Federation
 
 <kbd> <img src="https://user-images.githubusercontent.com/1150301/183426987-2ba5d9ce-2d9d-4e33-882e-e0e732f3568c.png" height="200"> </kbd>
@@ -33,5 +41,7 @@
     - Uncomment `id-token: 'write'`
     - Comment out `credentials_json`
     - Uncomment `workload_identity_provider: 'projects/<Project Number>/locations/global/workloadIdentityPools/training-pool/providers/training-provider'`
+        - Replace `<Project Number>` to Your Project Number
     - Uncomment `service_account: 'iac-actions-cd@<Project ID>.iam.gserviceaccount.com'`
+        - Replace `<Project ID>` to Your Project ID
 - You can do the same thing to App too.
